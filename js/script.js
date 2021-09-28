@@ -74,26 +74,53 @@ function writeYourGenres(){
 //showMyDB(personalMovieDB.privat);
 //writeYourGenres();
 
-const obj = {
-  'name':'Jhon',
-  'surname':'Down',
-  colors:{
-    bg:'yellow',
-    title:'black'
-  },
-   showObj: function (){
-    console.log(obj);
-  }
-};
+// const obj = {
+//   'name':'Jhon',
+//   'surname':'Down',
+//   colors:{
+//     bg:'yellow',
+//     title:'black'
+//   },
+//    showObj: function (){
+//     console.log(obj);
+//   }
+// };
 
-for(let key in obj){
-  console.log(`Property ${key} has value ${obj[key]}`);
+// for(let key in obj){
+//   console.log(`Property ${key} has value ${obj[key]}`);
+// }
+
+// console.log(Object.keys(obj));//На выходе массив ключей объекта
+// console.log(Object.keys(obj).length);
+// obj.showObj();
+
+// const{ bg, title} = obj.colors;//Деструктуризация объекта
+// console.log(title);
+
+// let arr = [1, 2, 3, 4, 5];
+// arr.pop();
+// console.log(arr);
+// arr.push(10);
+// console.log(arr);
+// // arr[99] = 0;
+// // console.log(arr);
+// // console.log(arr.length);
+// arr.forEach(function(item, index, arr ){
+//   console.log(`${index}:${item} в массиве ${arr}`);
+// });
+
+// const answer = prompt("", "");
+// const someArray = answer.split(", ");
+// console.log(someArray);
+// someArray.sort();
+// console.log(someArray.join("; "));
+
+const arr = [12,26,98,17,4];
+console.log(arr.sort());
+
+function compareNum(a, b){
+  return a-b ;
 }
 
-console.log(Object.keys(obj));//На выходе массив ключей объекта
-console.log(Object.keys(obj).length);
-obj.showObj();
-
-const{ bg, title} = obj.colors;//Деструктуризация объекта
-console.log(title);
+console.log(arr.sort(compareNum));
 
