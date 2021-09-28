@@ -10,7 +10,7 @@ function start(){
   }
 }
 
-start();
+//start();
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -36,7 +36,7 @@ function rememberMyFilms(){
 }
 }
 
-rememberMyFilms();
+//rememberMyFilms();
 
 function detectPersonalLevel()
 {
@@ -57,7 +57,7 @@ function detectPersonalLevel()
     }
 }
 
-detectPersonalLevel();
+//detectPersonalLevel();
 
 function showMyDB(flag){
   if(!flag){
@@ -71,6 +71,29 @@ function writeYourGenres(){
   }
 }
 
-showMyDB(personalMovieDB.privat);
-writeYourGenres();
+//showMyDB(personalMovieDB.privat);
+//writeYourGenres();
+
+const obj = {
+  'name':'Jhon',
+  'surname':'Down',
+  colors:{
+    bg:'yellow',
+    title:'black'
+  },
+   showObj: function (){
+    console.log(obj);
+  }
+};
+
+for(let key in obj){
+  console.log(`Property ${key} has value ${obj[key]}`);
+}
+
+console.log(Object.keys(obj));//На выходе массив ключей объекта
+console.log(Object.keys(obj).length);
+obj.showObj();
+
+const{ bg, title} = obj.colors;//Деструктуризация объекта
+console.log(title);
 
