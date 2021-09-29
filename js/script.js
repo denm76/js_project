@@ -115,12 +115,62 @@ function writeYourGenres(){
 // someArray.sort();
 // console.log(someArray.join("; "));
 
-const arr = [12,26,98,17,4];
-console.log(arr.sort());
+// const arr = [12,26,98,17,4];
+// console.log(arr.sort());
 
-function compareNum(a, b){
-  return a-b ;
+// function compareNum(a, b){
+//   return a-b ;
+// }
+
+// console.log(arr.sort(compareNum));
+
+function copyObject(obj){
+  const newObj = {};
+  for(let key in obj){
+        newObj[key] = obj[key];  
+  }
+  return newObj;
 }
 
-console.log(arr.sort(compareNum));
+const personObj = {
+  firstName:'Jhon',
+  secondName:'White',
+  parents:{
+    dad:'Bill',
+    mother:'Emily'
+  }
+};
 
+const adressObj = {
+  city:'New York',
+  street:'7 Avenue',
+  house:277,
+  room:12
+};
+let firstObj = Object.assign({},personObj);
+Object.assign(personObj,adressObj);
+firstObj['firstName'] = 'Ralf';
+console.log(firstObj);
+console.log('person',personObj);
+
+const a = [1,2,3];
+const b = a.slice();//Копирование массива
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blog  = ['wordpress', 'livejournal', 'blogger' ],
+      internet = [...blog, ...video, 'vk', 'facebook'];// SPREAD Operator
+
+console.log(internet);
+
+const c = [...a];//Копирование массива SPREAD Operator
+
+function show(a,b,c){
+  console.log(a,b,c);
+}
+
+show(...a);// SPREAD Operator
+
+const newAdress = {...adressObj};// SPREAD Operator создание независимой 
+//поверхностной копии объекта
+newAdress.street = 'Vorkuta';
+console.log(adressObj, newAdress);
