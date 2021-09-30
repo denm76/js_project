@@ -124,53 +124,67 @@ function writeYourGenres(){
 
 // console.log(arr.sort(compareNum));
 
-function copyObject(obj){
-  const newObj = {};
-  for(let key in obj){
-        newObj[key] = obj[key];  
-  }
-  return newObj;
-}
+// function copyObject(obj){
+//   const newObj = {};
+//   for(let key in obj){
+//         newObj[key] = obj[key];  
+//   }
+//   return newObj;
+// }
 
-const personObj = {
-  firstName:'Jhon',
-  secondName:'White',
-  parents:{
-    dad:'Bill',
-    mother:'Emily'
-  }
+// const personObj = {
+//   firstName:'Jhon',
+//   secondName:'White',
+//   parents:{
+//     dad:'Bill',
+//     mother:'Emily'
+//   }
+// };
+
+// const adressObj = {
+//   city:'New York',
+//   street:'7 Avenue',
+//   house:277,
+//   room:12
+// };
+// let firstObj = Object.assign({},personObj);
+// Object.assign(personObj,adressObj);
+// firstObj['firstName'] = 'Ralf';
+// console.log(firstObj);
+// console.log('person',personObj);
+
+// const a = [1,2,3];
+// const b = a.slice();//Копирование массива
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blog  = ['wordpress', 'livejournal', 'blogger' ],
+//       internet = [...blog, ...video, 'vk', 'facebook'];// SPREAD Operator
+
+// console.log(internet);
+
+// const c = [...a];//Копирование массива SPREAD Operator
+
+// function show(a,b,c){
+//   console.log(a,b,c);
+// }
+
+// show(...a);// SPREAD Operator
+
+// const newAdress = {...adressObj};// SPREAD Operator создание независимой 
+// //поверхностной копии объекта
+// newAdress.street = 'Vorkuta';
+// console.log(adressObj, newAdress);
+
+const soldier = {
+  health:400,
+  armor:100
+};
+const jhon = Object.create(soldier);//Современное создание объекта со свойствами прототипа
+const pikiner = {
+  bron:'steel'
 };
 
-const adressObj = {
-  city:'New York',
-  street:'7 Avenue',
-  house:277,
-  room:12
-};
-let firstObj = Object.assign({},personObj);
-Object.assign(personObj,adressObj);
-firstObj['firstName'] = 'Ralf';
-console.log(firstObj);
-console.log('person',personObj);
-
-const a = [1,2,3];
-const b = a.slice();//Копирование массива
-
-const video = ['youtube', 'vimeo', 'rutube'],
-      blog  = ['wordpress', 'livejournal', 'blogger' ],
-      internet = [...blog, ...video, 'vk', 'facebook'];// SPREAD Operator
-
-console.log(internet);
-
-const c = [...a];//Копирование массива SPREAD Operator
-
-function show(a,b,c){
-  console.log(a,b,c);
-}
-
-show(...a);// SPREAD Operator
-
-const newAdress = {...adressObj};// SPREAD Operator создание независимой 
-//поверхностной копии объекта
-newAdress.street = 'Vorkuta';
-console.log(adressObj, newAdress);
+//pikiner.__proto__=soldier;
+Object.setPrototypeOf(pikiner, soldier);
+console.log(pikiner.health);
+console.log(soldier);
